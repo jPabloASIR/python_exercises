@@ -1,0 +1,16 @@
+x = input("Elige un número ")
+y = input("Elige un segundo número ")
+
+suma = float(x) + float(y)
+resta = float(x) - float(y)
+multi = float(x) * float(y)
+divi = float(x) / float(y)
+modul = float(x) % float(y)
+poten = float(x) ** float(y)
+
+print(f"La suma de {x} y {y} es: {suma}")
+print(f"La resta de {x} y {y} es: {resta}")
+print(f"La multiplicación de {x} y {y} es: {multi}")
+print(f"La división de {x} y {y} es: {divi}")
+print(f"El módulo de {x} y {y} es: {modul}")
+print(f"La potencia de {x} y {y} es: {poten}")
