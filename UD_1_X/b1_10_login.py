@@ -1,6 +1,6 @@
-# Función para validar el email
+''' Función para validar el email '''
 def validar_email(email):
-    # Validación de la estructura del email
+    ''' Validación de la estructura del email '''
     if len(email) < 3 or "@" not in email:
         print("Email inválido. Debe tener al menos 3 caracteres, incluir '@', y tener una extensión válida como .com, .es, .net.")
         return
@@ -12,7 +12,7 @@ def validar_email(email):
         return
     return email
 
-# Función para validar la contraseña
+''' Función para validar la contraseña '''
 def validar_contraseña(password):
     if len(password) < 8:
         print("Contraseña insegura ❌. Debe tener al menos 8 caracteres.")
@@ -28,34 +28,34 @@ def validar_contraseña(password):
         return
     return password
 
-# Función para registrar un nuevo usuario
+''' Función para registrar un nuevo usuario '''
 def registrar_usuario():
     email = input("Introduce un nombre de usuario (email): ")
     
-    # Validación del email
+    ''' Validación del email '''
     while not validar_email(email):
         email = input("Introduce un nombre de usuario (email): ")
     
     password = input("Introduce una contraseña: ")
     
-    # Validación de la contraseña
+    ''' Validación de la contraseña '''
     while not validar_contraseña(password):
         password = input("Introduce una contraseña: ")
     
-    # Guardamos el usuario en el diccionario de usuarios
+    ''' Guardamos el usuario en el diccionario de usuarios '''
     usuarios[email] = password
     print("Usuario registrado con éxito ✅")
 
-# Función para iniciar sesión
+''' Función para iniciar sesión '''
 def iniciar_sesion():
     email = input("Introduce tu usuario (email): ")
     
-    # Verificación de si el usuario existe
+    ''' Verificación de si el usuario existe '''
     if email not in usuarios:
         print("Acceso denegado ⛔. El usuario no existe.")
         return
     
-    # Intentos de login
+    ''' Intentos de login '''
     intentos = 0
     while intentos < 3:
         password = input("Introduce tu contraseña: ")
@@ -69,7 +69,7 @@ def iniciar_sesion():
     
     print("Demasiados intentos fallidos 🚫. Regresando al menú principal.")
 
-# Función principal que ejecuta el menú
+''' Función principal que ejecuta el menú '''
 def menu():
     while True:
         opcion = input("\n¿Qué quieres hacer? [1] Registrarse  [2] Iniciar sesión  [3] Salir: ")
@@ -84,8 +84,9 @@ def menu():
         else:
             print("Opción no válida. Intenta de nuevo.")
 
-# Diccionario para almacenar los usuarios registrados
+''' Diccionario para almacenar los usuarios registrados '''
 usuarios = {}
 
-# Llamada al menú principal
+''' Llamada al menú principal '''
 menu()
+
