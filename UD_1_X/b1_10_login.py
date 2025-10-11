@@ -1,4 +1,65 @@
-# Función para validar el email 
+# Aquí se almacenan los usuarios registrados 
+usuarios = {}
+
+# Bucle while con condición True para que de una se muestre por pantalla el menú
+while True:
+    
+    opcion = input("\n¿Qué quieres hacer? [1] Registrarse  [2] Iniciar sesión  [3] Salir: ")
+    
+    if opcion == "1":
+        
+        email = input("Introduce un nombre de usuario (email): ")
+
+        # Este while comprueba todos los requisitos que debe de tener el email
+        while len(email) < 3 or "@" not in email or not (email.endswith(".com") or email.endswith(".es") or email.endswith(".net")) or any(c in "!#$%&*?" for c in email):
+            print("Email inválido. Debe tener al menos 3 caracteres, incluir '@', y tener una extensión válida como .com, .es, .net.")
+            email = input("Introduce un nombre de usuario (email): ")
+
+        password = input("Introduce una contraseña: ")
+
+        # Este while comprueba todos los requisitos que debe de tener la contraseña
+        while len(password) < 8 or not any(c.isupper() for c in password) or not any(c.isdigit() for c in password) or not any(c in "!@#$%&*?," for c in password):
+            print("Contraseña insegura ❌. Debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo especial (!@#$%&*?, etc.).")
+            password = input("Introduce una contraseña: ")
+
+        
+        usuarios[email] = password
+        print("Usuario registrado con éxito ✅")
+
+    elif opcion == "2":
+        # A partir de aquí es el inicio de sesión
+        email = input("Introduce tu usuario (email): ")
+
+        # If para comprobar si el usuario existe
+        if email not in usuarios:
+            print("Acceso denegado ⛔. El usuario no existe.")
+        else:
+            intentos = 0
+            while intentos < 3:
+                password = input("Introduce tu contraseña: ")
+
+                # If para comprobar si la contraseña es la del usuario
+                if usuarios[email] == password:
+                    print(f"Acceso concedido ✅. Bienvenida, {email}.")
+                    break
+                else:
+                    intentos += 1
+                    print(f"Acceso denegado ⛔. Intento {intentos}/3")
+
+            if intentos == 3:
+                print("Demasiados intentos fallidos 🚫. Regresando al menú principal.")
+
+    elif opcion == "3":
+        print("¡Hasta luego!")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+
+
+
+# Esto no forma parte de la práctica, pero quiero reservarlo por si acaso
+""" Función para validar el email 
 def validar_email(email):
     # Validación de la estructura del email 
     if len(email) < 3 or "@" not in email:
@@ -69,7 +130,7 @@ def iniciar_sesion():
     
     print("Demasiados intentos fallidos 🚫. Regresando al menú principal.")
 
-# Función principal que ejecuta el menú 
+# Función que ejecuta el menú 
 def menu():
     while True:
         opcion = input("\n¿Qué quieres hacer? [1] Registrarse  [2] Iniciar sesión  [3] Salir: ")
@@ -89,5 +150,5 @@ usuarios = {}
 
 # Llamada al menú principal 
 menu()
-
+"""
 
