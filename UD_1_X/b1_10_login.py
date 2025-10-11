@@ -25,7 +25,7 @@ while True:
             password = input("Introduce una contraseña: ")
 
         
-        usuarios[nombre_usuario] = {"email": email, "password": password} #Cada usuario tiene su email y password propios
+        usuarios.append((nombre_usuario, email, password)) #Cada usuario tiene su email y password propios
         print("Usuario registrado con éxito ✅")
 
     elif opcion == "2":
@@ -153,5 +153,6 @@ usuarios = {}
 # Llamada al menú principal 
 menu()
 """
+
 
 
