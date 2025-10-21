@@ -2,9 +2,9 @@ num1 = float(input("Elige un número "))
 num2 = float(input("Elige un segundo número "))
 
 x = int(input( "1.Suma"
-               "2.Resta"
-               "3.Multiplicación"
-               "4.División"
+               "\n2.Resta"
+               "\n3.Multiplicación"
+               "\n4.División"
                ":"))
 
 
@@ -22,3 +22,4 @@ elif x == 4:
     
 else:
     print("Operación no reconocida")
+
