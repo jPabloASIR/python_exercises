@@ -56,7 +56,7 @@ while True:
 
                     # Compruebo si la contraseña coincide con la almacenada del usuario elegido
                     if usuario[2] == password:
-                        print(f"Acceso concedido ✅. Bienvenida, {nombre_usuario}.")
+                        print(f"Acceso concedido ✅. Bienvenida/o, {nombre_usuario}.")
                         break
                     else:
                         intentos += 1
@@ -75,5 +75,6 @@ while True:
 
     else:
         print("Opción no válida. Intenta de nuevo.")
+
 
 
