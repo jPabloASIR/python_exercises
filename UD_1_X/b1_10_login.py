@@ -1,6 +1,6 @@
 usuarios = []
 
-# Bucle while con condición True para que de una se muestre por pantalla el menú
+# Bucle while con condición True para que de una se muestre por pantalla el menú.
 while True:
     
     opcion = input("\n¿Qué quieres hacer? [1] Registrarse  [2] Iniciar sesión  [3] Salir: ")
@@ -11,14 +11,16 @@ while True:
         
         email = input("Introduce su email: ")
 
-        # Este while comprueba todos los requisitos que debe de tener el email
+        # Este while comprueba todos los requisitos que debe de tener el email.
         while len(email) < 3 or "@" not in email or not (email.endswith(".com") or email.endswith(".es") or email.endswith(".net")) or any(c in "!#$%&*?" for c in email):
             print("Email inválido. Debe tener al menos 3 caracteres, incluir '@', y tener una extensión válida como .com, .es, .net.")
             email = input("Introduce un email válido: ")
 
         password = input("Introduce una contraseña: ")
 
-        # Este while comprueba todos los requisitos que debe de tener la contraseña
+        # Este while comprueba todos los requisitos que debe de tener la contraseña.
+        # not any(c.isupper()) comprueba si NO hay ninguna mayúscula, el enunciado nos dice que debe contener mínimo 1, pero .isupper comprueba que TODAS las letras de un str sean mayúsculas, de esta forma, hace lo que pide en el ejercicio.
+        # .isdigit() simplemente busca en la string si hay algún número, ya que el enunciado pide que la contraseña debe incluirlos.
         while len(password) < 8 or not any(c.isupper() for c in password) or not any(c.isdigit() for c in password) or not any(c in "!@#$%&*?," for c in password):
             print("Contraseña insegura ❌. Debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo especial (!@#$%&*?, etc.).")
             password = input("Introduce una contraseña válida: ")
@@ -31,7 +33,7 @@ while True:
         
         nombre_usuario = input("Introduce tu nombre de usuario: ")
 
-        # Busco el usuario en la lista, para ello lo inicializo en False
+        # Busco el usuario en la lista, para ello lo inicializo en False.
         encontrado = False
         for usuario in usuarios:
             if usuario[0] == nombre_usuario:  
@@ -62,3 +64,4 @@ while True:
 
     else:
         print("Opción no válida. Intenta de nuevo.")
+
