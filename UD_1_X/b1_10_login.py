@@ -1,3 +1,14 @@
+"""
+El programa comienza con un bucle while en True para que se repita siempre y cuando no se añade por teclado el número 3.
+
+Si el usuario escribe por teclado el número 1 el programa le pedirá: nombre_usuario, email (con las condiciones del enunciado) y password (con las condiciones del enunciado), si el usuario pasa estas restricciones su usuario se guardará en la lista usuarios que,
+al principio, aparece vacía. Agregamos el nuevo usuario con .append y le pasamos una lista en el mismo orden que de entrada.
+
+Para el inicio de sesión primero comparo que la posición 0 de la lista usuarios (que debe de contener nombre_usuario) es igual al nombre que el usuario pasa por teclado, si no lo es, sale un mensaje de que no existe y regresa al menú.
+El usuario tendrá 3 oportunidades para adivinar la contraseña del usuario introducida en el punto 1, si no lo consigue en esos intentos se devuelve al menú.
+
+"""
+
 usuarios = []
 
 # Bucle while con condición True para que de una se muestre por pantalla el menú.
@@ -64,4 +75,5 @@ while True:
 
     else:
         print("Opción no válida. Intenta de nuevo.")
+
 
