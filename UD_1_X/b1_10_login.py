@@ -7,6 +7,7 @@ al principio, aparece vacía. Agregamos el nuevo usuario con .append y le pasamo
 Para el inicio de sesión primero comparo que la posición 0 de la lista usuarios (que debe de contener nombre_usuario) es igual al nombre que el usuario pasa por teclado, si no lo es, sale un mensaje de que no existe y regresa al menú.
 El usuario tendrá 3 oportunidades para adivinar la contraseña del usuario introducida en el punto 1, si no lo consigue en esos intentos se devuelve al menú.
 
+Este codigo usa LISTAS, cosa que NO pertenece al tema 1, si quieres ver este código con SOLO los apuntes del tema 1 ve abajo del todo.
 """
 
 usuarios = []
@@ -75,6 +76,89 @@ while True:
 
     else:
         print("Opción no válida. Intenta de nuevo.")
+
+
+
+"""
+Según lo que hemos dado, el código debería de ser así:
+
+usuario_registrado = ""
+email_registrado = ""
+password_registrada = ""
+
+
+while True:
+    opcion = input("\n¿Qué quieres hacer? [1] Registrarse  [2] Iniciar sesión  [3] Salir: ")
+
+    if opcion == "1":
+        # Registro de usuario
+        usuario = input("Introduce un nombre de usuario: ")
+        email = input("Introduce tu email: ")
+
+        
+        while (
+            len(email) < 3
+            or "@" not in email
+            or not (email.endswith(".com") or email.endswith(".es") or email.endswith(".net"))
+            or any(c in "!#$%&*?" for c in email)
+        ):
+            print("Email inválido ❌. Debe tener al menos 3 caracteres, incluir '@' y una extensión válida (.com, .es, .net).")
+            email = input("Introduce un email válido: ")
+
+        password = input("Introduce una contraseña: ")
+
+        
+        while (
+            len(password) < 8
+            or not any(c.isupper() for c in password)
+            or not any(c.isdigit() for c in password)
+            or not any(c in "!@#$%&*?," for c in password)
+        ):
+            print("Contraseña insegura ❌. Debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo especial (!@#$%&*?, etc.).")
+            password = input("Introduce una contraseña válida: ")
+
+        
+        usuario_registrado = usuario
+        email_registrado = email
+        password_registrada = password
+
+        print("Usuario registrado con éxito ✅")
+
+    elif opcion == "2":
+        # Inicio de sesión
+        if usuario_registrado == "":
+            print("No hay ningún usuario registrado aún. Regístrate primero.")
+            continue
+
+        usuario = input("Introduce tu nombre de usuario: ")
+
+        if usuario != usuario_registrado:
+            print("Acceso denegado ⛔. El usuario no existe.")
+            continue
+
+        
+        intentos = 0
+        while intentos < 3:
+            password = input("Introduce tu contraseña: ")
+
+            if password == password_registrada:
+                print(f"Acceso concedido ✅. Bienvenida/o, {usuario}.")
+                break
+            else:
+                intentos += 1
+                print(f"Acceso denegado ⛔. Intento {intentos}/3")
+
+        if intentos == 3:
+            print("Demasiados intentos fallidos 🚫. Regresando al menú principal.")
+
+    elif opcion == "3":
+        print("¡Hasta luego! 👋")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")
+"""
+
 
 
 
