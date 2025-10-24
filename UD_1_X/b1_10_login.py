@@ -82,6 +82,13 @@ while True:
 """
 Según lo que hemos dado, el código debería de ser así:
 
+El programa comienza con un bucle while en True para que se repita siempre y cuando no se añade por teclado el número 3.
+
+Si el usuario escribe por teclado el número 1 el programa le pedirá: usuario, email (con las condiciones del enunciado) y password (con las condiciones del enunciado), si el usuario pasa estas restricciones su información se guardará en las 3 variables correspondientes.
+(usuario_registrado , email_registrado , password_registrada)
+
+El inicio de sesión es mucho más sencillo, simplemente primero veo si hay algo escrito en usuario_registrado, si es así, le pido el usuario (solo puede haber 1 a la vez).
+
 usuario_registrado = ""
 email_registrado = ""
 password_registrada = ""
@@ -152,13 +159,9 @@ while True:
             print("Demasiados intentos fallidos 🚫. Regresando al menú principal.")
 
     elif opcion == "3":
-        print("¡Hasta luego! 👋")
+        print("¡Hasta luego!")
         break
 
     else:
         print("Opción no válida. Intenta de nuevo.")
 """
-
-
-
-
