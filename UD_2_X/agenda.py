@@ -1,42 +1,10 @@
-agenda = {}
-'''Pasar esto a bucle'''
-name = input("Introduce nombre: ")
-tlf = input("Introduce teléfono: ")
-
-name2 = input("Introduce nombre: ")
-tlf2 = input("Introduce teléfono: ")
-
-name3 = input("Introduce nombre: ")
-tlf3 = input("Introduce teléfono: ")
-
-'''Las variables anteriores se van pasando una a una a la agenda'''
-agenda.update({name : tlf, name2 : tlf2, name3 : tlf3})
-
-'''Se recorre el diccionario entero sacando por pantalla sus valores'''
-print("Mostrando la agenda completa...")
-for clave, valor in agenda.items():
-    print(clave, ":", valor)
-
-
-ans = input("Buscar contacto: ")
-'''Si el nombre coincide con el que tenemos en la agenda, saldrá también su número. Sino, else'''
-if ans == name:
-    print(f"Teléfono: {tlf}")
-elif ans == name2:
-    print(f"Teléfono: {tlf2}")
-elif ans == name3:
-    print(f"Teléfono: {tlf3}")
-else:
-    print("Contacto no encontrado...")
-
-
-print("Saliendo del programa.")
-
-
-'''
+"""
+Tenemos un diccionario vacío al cual le iremos agregando contactos a placer del usuario con su respectivo número de teléfono.
+Una vez terminada, se mostrará por pantalla usando las variables que pide el ejercicio: print(clave, ":", valor).
+Por último, se le pedirá al usuario un nombre y, si está en el diccionario, saldrá por pantalla su número de teléfono.
+"""
 agenda = {}
 
-# Bucle para introducir múltiples contactos
 num_contactos = int(input("¿Cuántos contactos quieres agregar? "))
 
 for i in range(num_contactos):
@@ -44,11 +12,9 @@ for i in range(num_contactos):
     tlf = input(f"Introduce el teléfono de {nombre}: ")
     agenda[nombre] = tlf
 
-
 print("\nMostrando la agenda completa...")
 for clave, valor in agenda.items():
     print(clave, ":", valor)
-
 
 ans = input("Introduce un nombre: ")
 
@@ -58,4 +24,4 @@ else:
     print("Contacto no encontrado...")
 
 print("Saliendo del programa.")
-'''
+
