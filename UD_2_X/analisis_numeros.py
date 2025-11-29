@@ -8,7 +8,7 @@ Luego, se realizan las siguientes operaciones:
 Finalmente, se muestran los resultados de todas estas operaciones.
 """
 
-lista = list(range(1, 21))  # Lista de números del 1 al 20
+lista = list(range(1, 21))  
 
 
 cuadrados = [n ** 2 for n in lista]
@@ -37,3 +37,4 @@ print(mayores_que_10)
 
 print("\nDiccionario de números y sus dobles:")
 print(dobles)
+
