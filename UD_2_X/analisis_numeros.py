@@ -1,31 +1,39 @@
-import random
-lista = []
-cuadrado = []
-par = []
-idk = []
-dobles = {}
+"""
+Este programa genera una lista de 20 números enteros usando range().
+Luego, se realizan las siguientes operaciones:
+1. Se obtiene una lista con los cuadrados de todos los números.
+2. Se obtiene una lista con solo los números pares.
+3. Se obtiene una lista con los números mayores que 10.
+4. Se crea un diccionario que relaciona cada número con su doble.
+Finalmente, se muestran los resultados de todas estas operaciones.
+"""
 
-for n in range(0, 20):
-    num = random.randint(0, 20) ''' num contiene el valor actual del número aleatorio'''
-    lista.append(num) ''' Ese valor se guarda en la posición correspondiente de la lista llamada lista '''
-    print(lista)
-    cuadrado.append(lista)
-    par.append(lista)
-    idk.append(lista)
-    dobles[num] = num * 2 ''' Doble del valor actual de num '''
+lista = list(range(1, 21))  # Lista de números del 1 al 20
 
-print("\nMostrando los cuadrados de los números de la lista....")
 
-cuadrado = [n ** 2 for n in cuadrado]
-print(cuadrado)
+cuadrados = [n ** 2 for n in lista]
 
-print("\nMostrando solo los pares de la lista....")
-par = [n % 2 == 0 for n in par]
-print(par)
 
-print("\nMostrando solo los mayores de 10 de la lista....")
-idk = [n > 10 for n in idk]
-print(idk)
+pares = [n for n in lista if n % 2 == 0]
 
-print("\nDiccionario con los números y sus dobles:")
+
+mayores_que_10 = [n for n in lista if n > 10]
+
+
+dobles = {n: n * 2 for n in lista}
+
+
+print("Lista original de números:")
+print(lista)
+
+print("\nCuadrados de los números:")
+print(cuadrados)
+
+print("\nNúmeros pares:")
+print(pares)
+
+print("\nNúmeros mayores que 10:")
+print(mayores_que_10)
+
+print("\nDiccionario de números y sus dobles:")
 print(dobles)
