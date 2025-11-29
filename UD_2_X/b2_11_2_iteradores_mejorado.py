@@ -9,7 +9,7 @@ Se utiliza un iterador manual sobre las claves del diccionario usando las funcio
 de Python iter() y next():
 
 - iter(): crea un iterador a partir de un objeto iterable (diccionario en este caso). Permite recorrer los elementos de forma secuencial.
-- next(): devuelve el siguiente elemento del iterador. Si el iterador se ha agotado, lanza una excepción StopIteration, que permite terminar el bucle.
+- next(): devuelve el siguiente elemento del iterador. Si el iterador se ha acabado, lanza una excepción StopIteration, que permite terminar el bucle.
 """
 estudiantes = {
     "Ana": [8, 7, 9],
@@ -39,3 +39,4 @@ while True:
         estado = "Reprobado"
 
     print(f"{nombre} - Notas: {notas}, Promedio: {promedio}, Estado: {estado}")
+
